@@ -12,8 +12,8 @@ Os requisitos básicos são os seguintes:
 * Ordenar pelas palavras mais frequêntes primeiro, depois alfabeticamente;
 * Exibir as 20 palavras mais recorrentes;
 
-Exemplos:
----------
+Exemplo de Saída
+----------------
 
 ```
 id 9
