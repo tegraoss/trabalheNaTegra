@@ -1,6 +1,6 @@
-(function(angular){
-    "use strict";
+(function(angular) {
+  "use strict";
 
-    angular.module("cashMachineApp", []);
+  angular.module("cashMachineApp", ['angular.filter']);
 
 })(angular);

@@ -13,6 +13,10 @@
 
         var value = $scope.value;
 
+        if (!value) {
+          return;
+        }
+
         if (!$.isNumeric(value)) {
           $scope.errorMessage = "Not a number";
           return;
@@ -36,7 +40,9 @@
           }
 
           for (var x = 0; x < rest; x++) {
-            $scope.result.push(note);
+            $scope.result.push({
+              value: note
+            });
           }
 
           value -= note * rest;

@@ -24,7 +24,7 @@
 
           <div class="form-group">
             <label class="control-label">Value</label>
-            <input type="text" ng-model="value" class="form-control" ng-init="value= 80" />
+            <input type="text" ng-model="value" class="form-control" />
           </div>
           <div class="alert alert-danger" ng-show="errorMessage">{{errorMessage}}</div>
 
@@ -40,9 +40,9 @@
     </form>
 
     <div class="notes">
-      <div ng-repeat="note in result">
-        <i class="fa fa-money"></i>
-        <p> {{note | currency}}</p>
+      <div ng-repeat="note in result | groupBy: 'value'">
+        <i class="fa fa-money" ng-repeat="i in note"></i>
+        <p>{{note.length}} x {{note[0].value | currency}}</p>
       </div>
     </div>
 
@@ -51,6 +51,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js"></script>
   <script src="app/module.js"></script>
   <script src="app/controllers/main.js"></script>
 

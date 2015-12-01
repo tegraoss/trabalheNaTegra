@@ -15,7 +15,13 @@ h1{
 .notes > div i {
     font-size: 30px;
     margin-bottom: 5px;
+    margin-left: 5px;
 }
+
+.notes > div i:last-child {
+  margin-left: 0;
+}
+
 .notes > div p {
   margin: 0;
 }
