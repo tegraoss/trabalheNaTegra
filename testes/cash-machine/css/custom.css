@@ -1,0 +1,21 @@
+h1{
+  text-align: center;
+}
+
+.notes{
+  text-align: center;
+}
+
+.notes > div {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px;
+  color: green;
+}
+.notes > div i {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+.notes > div p {
+  margin: 0;
+}
