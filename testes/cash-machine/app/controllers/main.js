@@ -6,8 +6,6 @@
       var notes = [100, 50, 20, 10];
       var minimunNote = notes[notes.length - 1];
 
-      console.log(notes, minimunNote);
-
       $scope.submit = function(e) {
         e.preventDefault();
         $scope.errorMessage = "";
