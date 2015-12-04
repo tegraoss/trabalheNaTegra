@@ -3,15 +3,15 @@ Cash Machine
 
 O Problema
 ----------
-Desenvolva uma solução que simule a entrega de notas quando um cliente efetuar um saque em um caixa eletrônico. 
+Desenvolva uma aplicação que simule a entrega de notas quando um cliente efetuar um saque em um caixa eletrônico. 
 
-Os requisitos básicos são os seguintes:
-
-* Sempre entregar o menor número de notas possíveis;
-* É possível sacar o valor solicitado com as notas disponíveis;
-* Saldo do cliente é infinito;
-* Quantidade de notas é infinito;
-* Notas disponíveis de R$ 100,00; R$ 50,00; R$ 20,00 e R$ 10,00
+Sua aplicação deve:
+* Entregar sempre o menor número de notas possíveis
+* Sacar valores apenas com as notas disponíveis
+* Ter saldo do cliente infinito
+* Ter quantidade de notas infinita
+* Possuir apenas notas de ```R$ 100,00```, ```R$ 50,00```, ```R$ 20,00``` e ```R$ 10,00```
+* Retornar mensagens de erro em caso de entradas inválidas
 
 Exemplos:
 ---------
@@ -25,12 +25,12 @@ Exemplos:
 
 * 
   **Entrada:** 125.00  
-  **Resultado:** *throw NoteUnavailableException*
+  **Resultado:** *Erro de notas indisponíveis*
 
 * 
  **Entrada:** -130.00   
- **Resultado:** *throw InvalidArgumentException*
+ **Resultado:** *Erro de valor inválido*
 
 * 
   **Entrada:** NULL  
-  **Resultado:** [Empty Set]
+  **Resultado:** *Erro de valor nulo*
