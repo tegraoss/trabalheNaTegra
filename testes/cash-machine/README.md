@@ -13,6 +13,9 @@ Sua aplicação deve:
 * Possuir apenas notas de ```R$ 100,00```, ```R$ 50,00```, ```R$ 20,00``` e ```R$ 10,00```
 * Retornar mensagens de erro em caso de entradas inválidas
 
+Observação:
+* Não há restrições para o desenvolvimento de sua solução: use quaisquer linguagens, boas práticas e tecnologias de sua preferência.
+
 Exemplos:
 ---------
 * 
