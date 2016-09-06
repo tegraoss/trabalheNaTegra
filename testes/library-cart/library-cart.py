@@ -27,9 +27,9 @@ if __name__ ==  '__main__':
     print(currentCart.length)
     while(true):
         # Menu
-        print('A - Add new book') //todo
+        print('A - Add new book') #todo
         print('B - Browse available books')
-        print('C - View your cart') //todo
-        print('D - Delete a book') //todo
+        print('C - View your cart') #todo
+        print('D - Delete a book') #todo
 
     # browseBooks(currentCart.itensList)
