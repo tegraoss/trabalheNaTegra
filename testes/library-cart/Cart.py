@@ -1,16 +1,18 @@
 class cart:
     itensList = []
-    numberOfItens = 0
+    length = 0
 
     def __init__(self):
         self.itensList = []
-        self.numberOfItens = 0
+        self.length = 0
 
     def addItem(self, newItem):
+        self.length += 1
         self.itensList.append(newItem)
 
     def removeItem(self, itemToBeRemoved):
         try:
+            self.length -= 1
             self.itensList.remove(itemToBeRemoved)
             return True
         except:
