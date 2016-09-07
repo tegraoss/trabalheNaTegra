@@ -59,13 +59,23 @@ if __name__ ==  '__main__':
     # print(currentCart.length)
     while(True):
         # Menu
-        print('A - Add new book') 
+        print('A - Add new book')
         print('B - Browse available books')
         print('C - Cart') #todo
         print('D - Delete a book') #todo
         print('E - Exit') #toso
-
-        if str(input()).lower() == 'a':
+        choose = str(input()).lower()
+        if choose == 'a':
             addNewBook()
+        elif choose == 'b':
+            print(todo)
+        elif choose == 'c':
+            print(todo)
+        elif choose == 'd':
+            print(todo)
+        elif choose == 'e':
+            print(todo)
+        else:
+            print(todo)
 
     # browseBooks(currentCart.itensList)
