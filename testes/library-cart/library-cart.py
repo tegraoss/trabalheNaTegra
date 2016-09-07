@@ -76,6 +76,6 @@ if __name__ ==  '__main__':
         elif choose == 'e':
             print('todo')
         else:
-            print('todo')
+            print('Invalid option')
 
     # browseBooks(currentCart.itensList)
