@@ -68,14 +68,14 @@ if __name__ ==  '__main__':
         if choose == 'a':
             addNewBook()
         elif choose == 'b':
-            print(todo)
+            print('todo')
         elif choose == 'c':
-            print(todo)
+            print('todo')
         elif choose == 'd':
-            print(todo)
+            print('todo')
         elif choose == 'e':
-            print(todo)
+            print('todo')
         else:
-            print(todo)
+            print('todo')
 
     # browseBooks(currentCart.itensList)
