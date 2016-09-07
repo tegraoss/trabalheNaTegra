@@ -74,7 +74,8 @@ if __name__ ==  '__main__':
         elif choose == 'd':
             print('todo')
         elif choose == 'e':
-            print('todo')
+            print('Thank you for using our store \o/')
+            exit()
         else:
             print('Invalid option')
 
