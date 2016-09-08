@@ -22,10 +22,13 @@ class book:
         else:
             return False
     def removeQuantity(self, Quantity):
-        if self.qtd >= Quantity:
-            self.qtd -= Quantity
-            return True
-        else:
+        try:
+            if self.qtd >= Quantity:
+                self.qtd -= Quantity
+                return True
+            else:
+                return False
+        except:
             return False
     def addQuantity(self, Quantity):
         self.qtd += Quantity

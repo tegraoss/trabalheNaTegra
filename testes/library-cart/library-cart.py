@@ -13,21 +13,39 @@ def SelectBook(book):
     resp = str(input()).lower()
     if resp == 'y' or resp == 'yes':
         print("Quantity(" + str(book.qtd) + " books remaining): ")
-        quantity = ''
-        # Voltar para resolver o caso de quantidade a mais
-        while not isInt(quantity):
+        while True :
             quantity = readNewBook('quantity')
-        quantity = int(quantity)
-        book.setQtd(book.qtd - quantity)
-        cartBook = Book.book(book.nome,book.autor,book.price, quantity)
+            if isInt(quantity) and book.removeQuantity(int(quantity)):
+                cartBook = Book.book(book.nome,book.autor,book.price, int(quantity))
+                break
         currentCart.addItem(cartBook)
-        
+
+def alterBook(book):
+    print('\nR - Remove book from cart\nE - Edit quantity\nEnter - to continue')
+    resp = str(input()).lower()
+    if resp == 'r':
+        for item in BooksList:
+            if item.nome == book.nome:
+                item.addQuantity(book.qtd)
+                currentCart.itensList.remove(book)
+    elif resp == 'e':
+        print('todo')
+
+def updateQuantity(book,item,quantity):
+    if book.removeQuantity(quantity):
+        item.addQuantity(quantity)
+        return True
+    else:
+        return False
+
+
 def isFloat(s):
     try:
         float(s)
         return True
     except:
         return False
+
 def isInt(s):
     try:
         int(s)
@@ -64,16 +82,18 @@ if __name__ ==  '__main__':
         # Menu
         print('A - Add new book')
         print('B - Browse available books')
-        print('C - Cart') #todo
+        print('C - Cart')
         print('D - Delete a book') #todo
-        print('E - Exit') #toso
+        print('E - Exit') #todo
         choose = str(input()).lower()
         if choose == 'a':
             addNewBook()
         elif choose == 'b':
+            print('###################### Select Books to put in your cart ######################')
             browseBooks(BooksList, SelectBook)
         elif choose == 'c':
-            print('todo')
+            print('###################### View your cart ######################')
+            browseBooks(currentCart.itensList, alterBook)
         elif choose == 'd':
             print('todo')
         elif choose == 'e':
