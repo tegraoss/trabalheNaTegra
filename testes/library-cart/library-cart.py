@@ -1,6 +1,7 @@
 import Book
 from readConversor import readme_conversor
 from Cart import cart
+from subprocess import call
 
 def browseBooks(BooksList,responseMethod):
     for book in BooksList:
@@ -108,6 +109,7 @@ if __name__ ==  '__main__':
         elif choose == 'd':
             print('todo')
         elif choose == 'e':
+            call(['clear'])
             print('Thank you for using our store \o/')
             exit()
         else:
