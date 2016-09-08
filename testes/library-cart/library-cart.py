@@ -29,7 +29,18 @@ def alterBook(book):
                 item.addQuantity(book.qtd)
                 currentCart.itensList.remove(book)
     elif resp == 'e':
-        print('todo')
+        for item in BooksList:
+            if item.nome == book.nome:
+                break
+        while True:
+            quantity = readNewBook('new cart quantity')
+            if isInt(quantity) and int(quantity) >= 0:
+                quantity = (int(quantity) - book.qtd)
+                if(quantity < book.qtd):
+                    updateQuantity(item, book, quantity)
+                else:
+                    updateQuantity(book, item, quantity * -1)
+                break
 
 def updateQuantity(book,item,quantity):
     if book.removeQuantity(quantity):
