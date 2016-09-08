@@ -23,3 +23,9 @@ class cart:
         for item in self.itensList:
             price += item.price
         return price
+
+    def calcPrice(self):
+        totalPrice = 0.0
+        for book in self.itensList:
+            totalPrice += book.price * book.qtd
+        return totalPrice

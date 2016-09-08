@@ -106,6 +106,7 @@ if __name__ ==  '__main__':
         elif choose == 'c':
             print('###################### View your cart ######################')
             browseBooks(currentCart.itensList, alterBook)
+            print('###################### Total price: ' + str(currentCart.calcPrice()) + ' ######################')
         elif choose == 'd':
             print('todo')
         elif choose == 'e':
