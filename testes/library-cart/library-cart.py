@@ -3,6 +3,22 @@ from readConversor import readme_conversor
 from Cart import cart
 from subprocess import call
 
+def TrabalheNaTegra():
+    print('10% discount in books of Martin Fowler')
+    discountedBooks = 0
+    for book in currentCart.itensList:
+        if book.autor.lower() == 'martin fowler':
+            print('\nBook: ' + book.nome + '\nFrom R$ ' + str(book.price))
+            book.setPrice(book.price * 0.9)
+            print('\nFor R$ ' + str(book.price))
+            discountedBooks += 1
+    print(str(discountedBooks) + ' had its price reduced')
+
+def coupons():
+    coupon = str(input())
+    if coupon == 'TrabalheNaTegra':
+        TrabalheNaTegra()
+
 def browseBooks(BooksList,responseMethod):
     for book in BooksList:
         if book.qtd > 0:
@@ -108,7 +124,7 @@ if __name__ ==  '__main__':
             browseBooks(currentCart.itensList, alterBook)
             print('###################### Total price: ' + str(currentCart.calcPrice()) + ' ######################')
         elif choose == 'd':
-            print('todo')
+            coupons()
         elif choose == 'e':
             call(['clear'])
             print('Thank you for using our store \o/')
