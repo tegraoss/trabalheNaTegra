@@ -95,8 +95,8 @@ if __name__ ==  '__main__':
         print('A - Add new book')
         print('B - Browse available books')
         print('C - Cart')
-        print('D - Delete a book') #todo
-        print('E - Exit') #todo
+        print('D - Enter a Coupon') #todo
+        print('E - Exit')
         choose = str(input()).lower()
         if choose == 'a':
             addNewBook()
