@@ -19,12 +19,6 @@ class cart:
             return False
 
     def calcPrice(self):
-        price = 0
-        for item in self.itensList:
-            price += item.price
-        return price
-
-    def calcPrice(self):
         totalPrice = 0.0
         for book in self.itensList:
             totalPrice += book.price * book.qtd
