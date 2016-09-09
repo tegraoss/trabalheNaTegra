@@ -4,29 +4,29 @@ from readConversor import readme_conversor
 from Cart import cart
 from subprocess import call
 
-def TrabalheNaTegra():
+def trabalheNaTegra():
     print('10% discount in books of Martin Fowler')
-    discountedBooks = 0
-    for book in currentCart.itensList:
-        if book.autor.lower() == 'martin fowler':
-            print('\nBook: ' + book.nome + '\nFrom R$ ' + str(book.price))
-            book.setPrice(book.price * 0.9)
-            print('\nFor R$ ' + str(book.price))
-            discountedBooks += 1
-    print(str(discountedBooks) + ' had its price reduced')
+    DiscountedBooks = 0
+    for Item in CurrentCart.ItensList:
+        if Item.Author.lower() == 'martin fowler':
+            print('\nBook: ' + Item.Name + '\nFrom R$ ' + str(Item.Price))
+            Item.setPrice(Item.Price * 0.9)
+            print('For R$ ' + str(Item.Price))
+            DiscountedBooks += 1
+    print('\n' + str(DiscountedBooks) + ' books had its price reduced')
 
 def openSource():
     print('Knoledge must be shared \o/')
-    for book in currentCart.itensList:
-        book.setPrice(0.0)
-    print(str(len(currentCart.itensList)) + ' had its price reduced')
+    for Item in CurrentCart.ItensList:
+        Item.setPrice(0.0)
+    print(str(len(CurrentCart.ItensList)) + ' books had its price reduced')
 
 def coupons():
     print('Enter you coupon receive discount or benefits')
-    coupon = str(input())
-    if coupon == 'TrabalheNaTegra':
-        TrabalheNaTegra()
-    elif coupon == 'OpenSource':
+    Coupon = str(input())
+    if Coupon == 'TrabalheNaTegra':
+        trabalheNaTegra()
+    elif Coupon == 'OpenSource':
         openSource()
     else:
         print('Invalid Coupon')
@@ -39,44 +39,44 @@ def browseBooks(BooksList,responseMethod):
         print('List is currently empty\nEnter to continue')
         input()
         return
-    for book in BooksList:
-        if book.qtd > 0:
+    for Item in BooksList:
+        if Item.Qtt > 0:
             call(['clear'])
-            print('Name: ' + book.nome + '\nAuthor: '+ book.autor + '\nPrice: R$ ' + str(book.price) + '\nQuantity: ' + str(book.qtd))
-            responseMethod(book)
+            print('Name: ' + Item.Name + '\nAuthor: '+ Item.Author + '\nPrice: R$ ' + str(Item.Price) + '\nQuantity: ' + str(Item.Qtt))
+            responseMethod(Item)
 
-def SelectBook(book):
+def selectBook(BOOK):
     print('\nY - Add the book to cart\nEnter - to continue')
-    resp = str(input()).lower()
-    if resp == 'y' or resp == 'yes':
-        print("Quantity(" + str(book.qtd) + " books remaining): ")
+    Resp = str(input()).lower()
+    if Resp == 'y' or Resp == 'yes':
+        print("Quantity(" + str(BOOK.Qtt) + " books remaining): ")
         while True :
-            quantity = readNewBook('quantity')
-            if isInt(quantity) and book.removeQuantity(int(quantity)):
-                cartBook = Book.book(book.nome,book.autor,book.price, int(quantity))
+            Quantity = readNewBook('quantity')
+            if isInt(Quantity) and BOOK.removeQuantity(int(Quantity)):
+                CartBook = Book.book(BOOK.Name,BOOK.Author,BOOK.Price, int(Quantity))
                 break
-        currentCart.addItem(cartBook)
+        CurrentCart.addItem(CartBook)
 
-def alterBook(book):
+def alterBook(BOOK):
     print('\nR - Remove book from cart\nE - Edit quantity\nEnter - to continue')
-    resp = str(input()).lower()
-    if resp == 'r':
-        for item in BooksList:
-            if item.nome == book.nome:
-                item.addQuantity(book.qtd)
-                currentCart.itensList.remove(book)
-    elif resp == 'e':
-        for item in BooksList:
-            if item.nome == book.nome:
+    Resp = str(input()).lower()
+    if Resp == 'r':
+        for Item in BooksList:
+            if Item.Name == BOOK.Name:
+                Item.addQuantity(BOOK.Qtt)
+                CurrentCart.ItensList.remove(BOOK)
+    elif Resp == 'e':
+        for Item in BooksList:
+            if Item.Name == BOOK.Name:
                 break
         while True:
-            quantity = readNewBook('new cart quantity')
-            if isInt(quantity) and int(quantity) >= 0:
-                quantity = (int(quantity) - book.qtd)
-                if(quantity < book.qtd):
-                    updateQuantity(item, book, quantity)
+            Quantity = readNewBook('new cart quantity')
+            if isInt(Quantity) and int(Quantity) >= 0:
+                Quantity = (int(Quantity) - BOOK.Qtt)
+                if(Quantity < BOOK.Qtt):
+                    updateQuantity(Item, BOOK, Quantity)
                 else:
-                    updateQuantity(book, item, quantity * -1)
+                    updateQuantity(BOOK, Item, Quantity * -1)
                 break
 
 def updateQuantity(book,item,quantity):
@@ -87,43 +87,46 @@ def updateQuantity(book,item,quantity):
         return False
 
 
-def isFloat(s):
+def isFloat(S):
     try:
-        float(s)
+        float(S)
         return True
     except:
         return False
 
-def isInt(s):
+def isInt(S):
     try:
-        int(s)
+        int(S)
         return True
     except:
         return False
 
 def readNewBook(atribute):
     print('\nEnter the ' + atribute + ' of the book: ')
-    newAtribute = str(input())
-    return newAtribute
+    NewAtribute = str(input())
+    return NewAtribute
 
 def addNewBook():
-    name = readNewBook('name')
-    author = readNewBook('author')
-    quantity = ''
-    while not isInt(quantity):
-        quantity = readNewBook('quantity')
-    price = ''
-    while not isFloat(price):
-        price = readNewBook('price')
+    Name = readNewBook('name')
+    Author = readNewBook('author')
+    Quantity = ''
+    while not isInt(Quantity):
+        Quantity = readNewBook('quantity')
+    Price = ''
+    while not isFloat(Price):
+        Price = readNewBook('price')
     try:
-        BooksList.append(Book.book(name,author, float(price), int(quantity)))
+        BooksList.append(Book.book(Name, Author, float(Price), int(Quantity)))
         print('Book inserted!\nEnter to continue')
         input()
         return True
     except:
         return False
+
+
+
 if __name__ ==  '__main__':
-    currentCart = cart()
+    CurrentCart = cart()
     BooksList = readme_conversor()
     while(True):
         # Menu
@@ -131,31 +134,29 @@ if __name__ ==  '__main__':
         print('######################################################################')
         print('#                       WELCOME TO TEGRA STORE                       #')
         print('######################################################################')
-        print('Your cart: ' + str(currentCart.length) + ' itens in cart, total value R$ ' + str(currentCart.calcPrice()))
+        print('Your cart: ' + str(CurrentCart.Length) + ' itens in cart, total value R$ ' + str(CurrentCart.calcPrice()))
         print('1 - Add new book')
         print('2 - Browse available books')
         print('3 - Cart view')
-        print('4 - Enter a Coupon')
+        print('4 - Buy cart itens')
         print('E - Exit')
-        choose = str(input()).lower()
+        Option = str(input()).lower()
         call(['clear'])
-        if choose == 'a' or choose =='1':
+        if Option == 'a' or Option =='1':
             addNewBook()
-        elif choose == 'b' or choose == '2':
+        elif Option == 'b' or Option == '2':
             print('###################### Select Books to put in your cart ######################')
-            browseBooks(BooksList, SelectBook)
-        elif choose == 'c'  or choose == '3':
+            browseBooks(BooksList, selectBook)
+        elif Option == 'c'  or Option == '3':
             print('###################### View your cart ######################')
-            browseBooks(currentCart.itensList, alterBook)
-            print('###################### Total price: ' + str(currentCart.calcPrice()) + ' ######################')
-        elif choose == 'r' or choose == '4':
+            browseBooks(CurrentCart.ItensList, alterBook)
+            print('###################### Total price: ' + str(CurrentCart.calcPrice()) + ' ######################')
+        elif Option == 'r' or Option == '4':
             coupons()
-        elif choose == 'e' or choose == '5':
+        elif Option == 'e' or Option == '5':
             call(['clear'])
             print('Thank you for using our store \o/')
             exit()
         else:
             print('Invalid option!\nEnter')
             input()
-
-    # browseBooks(currentCart.itensList)

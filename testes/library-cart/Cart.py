@@ -1,25 +1,25 @@
 class cart:
-    itensList = []
-    length = 0
+    ItensList = []
+    Length = 0
 
     def __init__(self):
-        self.itensList = []
-        self.length = 0
+        self.ItensList = []
+        self.Length = 0
 
-    def addItem(self, newItem):
-        self.length += 1
-        self.itensList.append(newItem)
+    def addItem(self, NewItem):
+        self.Length += 1
+        self.ItensList.append(NewItem)
 
-    def removeItem(self, itemToBeRemoved):
+    def removeItem(self, ItemToBeRemoved):
         try:
-            self.length -= 1
-            self.itensList.remove(itemToBeRemoved)
+            self.Length -= 1
+            self.ItensList.remove(ItemToBeRemoved)
             return True
         except:
             return False
 
     def calcPrice(self):
-        totalPrice = 0.0
-        for book in self.itensList:
-            totalPrice += book.price * book.qtd
-        return totalPrice
+        TotalPrice = 0.0
+        for Book in self.ItensList:
+            TotalPrice += Book.Price * Book.Qtt
+        return TotalPrice

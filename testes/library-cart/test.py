@@ -11,11 +11,11 @@ def fullfilTheCart(newCart):
     return newCart
 
 class TestBookClass(unittest.TestCase):
-    def test_setQtd(self):
+    def test_setQtt(self):
         newBook = book('Livro Teste', 'Zeca', 0 , 0)
-        self.assertTrue(newBook.setQtd(10))
-        self.assertTrue(newBook.setQtd(0))
-        self.assertFalse(newBook.setQtd(-1))
+        self.assertTrue(newBook.setQtt(10))
+        self.assertTrue(newBook.setQtt(0))
+        self.assertFalse(newBook.setQtt(-1))
 
     def test_setPrice(self):
         newBook = book('Livro Teste', 'Zeca', 0 , 0)
@@ -32,7 +32,7 @@ class TestBookClass(unittest.TestCase):
 class TestCartClass(unittest.TestCase):
     def test_removeItem(self):
         newCart = fullfilTheCart(cart())
-        self.assertTrue(newCart.itensList[2])
+        self.assertTrue(newCart.removeItem(newCart.ItensList[2]))
 
     def test_calcPrice(self):
         newCart = fullfilTheCart(cart())
