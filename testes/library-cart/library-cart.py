@@ -15,12 +15,19 @@ def TrabalheNaTegra():
             discountedBooks += 1
     print(str(discountedBooks) + ' had its price reduced')
 
+def openSource():
+    print('Knoledge must be shared \o/')
+    for book in currentCart.itensList:
+        book.setPrice(0.0)
+    print(str(len(currentCart.itensList)) + ' had its price reduced')
 
 def coupons():
     print('Enter you coupon receive discount or benefits')
     coupon = str(input())
     if coupon == 'TrabalheNaTegra':
         TrabalheNaTegra()
+    elif coupon == 'OpenSource':
+        openSource()
     else:
         print('Invalid Coupon')
     print('\nEnter to continue')
