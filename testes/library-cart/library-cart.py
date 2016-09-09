@@ -1,4 +1,5 @@
 import Book
+import time
 from readConversor import readme_conversor
 from Cart import cart
 from subprocess import call
@@ -14,14 +15,26 @@ def TrabalheNaTegra():
             discountedBooks += 1
     print(str(discountedBooks) + ' had its price reduced')
 
+
 def coupons():
+    print('Enter you coupon receive discount or benefits')
     coupon = str(input())
     if coupon == 'TrabalheNaTegra':
         TrabalheNaTegra()
+    else:
+        print('Invalid Coupon')
+    print('\nEnter to continue')
+    input()
+
 
 def browseBooks(BooksList,responseMethod):
+    if len(BooksList) == 0:
+        print('List is currently empty\nEnter to continue')
+        input()
+        return
     for book in BooksList:
         if book.qtd > 0:
+            call(['clear'])
             print('Name: ' + book.nome + '\nAuthor: '+ book.autor + '\nPrice: R$ ' + str(book.price) + '\nQuantity: ' + str(book.qtd))
             responseMethod(book)
 
@@ -82,7 +95,7 @@ def isInt(s):
         return False
 
 def readNewBook(atribute):
-    print('Enter the ' + atribute + ' of the book: ')
+    print('\nEnter the ' + atribute + ' of the book: ')
     newAtribute = str(input())
     return newAtribute
 
@@ -97,39 +110,45 @@ def addNewBook():
         price = readNewBook('price')
     try:
         BooksList.append(Book.book(name,author, float(price), int(quantity)))
+        print('Book inserted!\nEnter to continue')
+        input()
         return True
     except:
         return False
-
 if __name__ ==  '__main__':
     currentCart = cart()
     BooksList = readme_conversor()
-    # browseBooks(BooksList, SelectBook)
-    # print(currentCart.length)
     while(True):
         # Menu
-        print('A - Add new book')
-        print('B - Browse available books')
-        print('C - Cart')
-        print('D - Enter a Coupon') #todo
+        call(['clear'])
+        print('######################################################################')
+        print('#                       WELCOME TO TEGRA STORE                       #')
+        print('######################################################################')
+        print('Your cart: ' + str(currentCart.length) + ' itens in cart, total value R$ ' + str(currentCart.calcPrice()))
+        print('1 - Add new book')
+        print('2 - Browse available books')
+        print('3 - Cart view')
+        print('4 - Enter a Coupon')
         print('E - Exit')
         choose = str(input()).lower()
-        if choose == 'a':
+        call(['clear'])
+        if choose == 'a' or choose =='1':
             addNewBook()
-        elif choose == 'b':
+        elif choose == 'b' or choose == '2':
             print('###################### Select Books to put in your cart ######################')
             browseBooks(BooksList, SelectBook)
-        elif choose == 'c':
+        elif choose == 'c'  or choose == '3':
             print('###################### View your cart ######################')
             browseBooks(currentCart.itensList, alterBook)
             print('###################### Total price: ' + str(currentCart.calcPrice()) + ' ######################')
-        elif choose == 'd':
+        elif choose == 'r' or choose == '4':
             coupons()
-        elif choose == 'e':
+        elif choose == 'e' or choose == '5':
             call(['clear'])
             print('Thank you for using our store \o/')
             exit()
         else:
-            print('Invalid option')
+            print('Invalid option!\nEnter')
+            input()
 
     # browseBooks(currentCart.itensList)
