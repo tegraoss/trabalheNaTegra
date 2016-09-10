@@ -1,8 +1,30 @@
 import Book
-import time
 from readConversor import readme_conversor
 from Cart import cart
 from subprocess import call
+
+def reviewCart(BOOK):
+    print('Enter to continue')
+    input()
+
+def cartCheckout(CART):
+    print('Review your cart to finalize your shopping')
+    print('Enter to continue')
+    input()
+    browseBooks(CART.ItensList , reviewCart)
+    print('Your total purchase is R$ ' + str(CART.calcPrice()))
+    print('Want to proceed? (Y)es or (n)o')
+    Option = str(input()).lower()
+    if Option == 'y' or Option == 'yes':
+        # Payment procedure here
+        print('Payment Method')
+        print('Your book will arive soon!')
+        input()
+        return True
+    else:
+        print('Back to Menu\nEnter to Continue')
+        input()
+        return False
 
 def trabalheNaTegra():
     print('10% discount in books of Martin Fowler')
@@ -22,16 +44,23 @@ def openSource():
     print(str(len(CurrentCart.ItensList)) + ' books had its price reduced')
 
 def coupons():
-    print('Enter you coupon receive discount or benefits')
-    Coupon = str(input())
-    if Coupon == 'TrabalheNaTegra':
-        trabalheNaTegra()
-    elif Coupon == 'OpenSource':
-        openSource()
-    else:
-        print('Invalid Coupon')
-    print('\nEnter to continue')
-    input()
+    TryAgain = True
+    while TryAgain:
+        print('Enter you coupon receive discount or benefits')
+        Coupon = str(input())
+        if Coupon == 'TrabalheNaTegra':
+            trabalheNaTegra()
+        elif Coupon == 'OpenSource':
+            openSource()
+        else:
+            print('Invalid Coupon\nTry again? (Y)es or (n)o')
+            Option = str(input()).lower()
+            if not(Option == 'y') and not(Option == 'yes'):
+                TryAgain = False
+            else:
+                call(['clear'])
+    # print('\nEnter to continue')
+    # input()
 
 
 def browseBooks(BooksList,responseMethod):
@@ -153,6 +182,8 @@ if __name__ ==  '__main__':
             print('###################### Total price: ' + str(CurrentCart.calcPrice()) + ' ######################')
         elif Option == 'r' or Option == '4':
             coupons()
+            if cartCheckout(CurrentCart):
+                CurrentCart = cart()
         elif Option == 'e' or Option == '5':
             call(['clear'])
             print('Thank you for using our store \o/')
