@@ -7,10 +7,12 @@ def reviewCart(BOOK):
     print('Enter to continue')
     input()
 
+# finalize shopping
 def cartCheckout(CART):
     print('Review your cart to finalize your shopping')
     print('Enter to continue')
     input()
+    # browse cart to review the order
     browseBooks(CART.ItensList , reviewCart)
     print('Your total purchase is R$ ' + str(CART.calcPrice()))
     print('Want to proceed? (Y)es or (n)o')
@@ -26,6 +28,7 @@ def cartCheckout(CART):
         input()
         return False
 
+# Specified coupon on problem documentation
 def trabalheNaTegra():
     print('10% discount in books of Martin Fowler')
     DiscountedBooks = 0
@@ -37,12 +40,14 @@ def trabalheNaTegra():
             DiscountedBooks += 1
     print('\n' + str(DiscountedBooks) + ' books had its price reduced')
 
+# A Coupon add by me
 def openSource():
     print('Knoledge must be shared \o/')
     for Item in CurrentCart.ItensList:
         Item.setPrice(0.0)
     print(str(len(CurrentCart.ItensList)) + ' books had its price reduced')
 
+# Coupon menu
 def coupons():
     TryAgain = True
     while TryAgain:
@@ -59,10 +64,8 @@ def coupons():
                 TryAgain = False
             else:
                 call(['clear'])
-    # print('\nEnter to continue')
-    # input()
 
-
+# Function to browse books and respond to it
 def browseBooks(BooksList,responseMethod):
     if len(BooksList) == 0:
         print('List is currently empty\nEnter to continue')
@@ -74,6 +77,7 @@ def browseBooks(BooksList,responseMethod):
             print('Name: ' + Item.Name + '\nAuthor: '+ Item.Author + '\nPrice: R$ ' + str(Item.Price) + '\nQuantity: ' + str(Item.Qtt))
             responseMethod(Item)
 
+# Response function for browse tha library
 def selectBook(BOOK):
     print('\nY - Add the book to cart\nEnter - to continue')
     Resp = str(input()).lower()
@@ -86,6 +90,7 @@ def selectBook(BOOK):
                 break
         CurrentCart.addItem(CartBook)
 
+# Response function to browse cart
 def alterBook(BOOK):
     print('\nR - Remove book from cart\nE - Edit quantity\nEnter - to continue')
     Resp = str(input()).lower()
@@ -107,6 +112,7 @@ def alterBook(BOOK):
                 else:
                     updateQuantity(BOOK, Item, Quantity * -1)
                 break
+
 
 def updateQuantity(book,item,quantity):
     if book.removeQuantity(quantity):
@@ -153,7 +159,7 @@ def addNewBook():
         return False
 
 
-
+# Main
 if __name__ ==  '__main__':
     CurrentCart = cart()
     BooksList = readme_conversor()
@@ -164,7 +170,7 @@ if __name__ ==  '__main__':
         print('#                       WELCOME TO TEGRA STORE                       #')
         print('######################################################################')
         print('Your cart: ' + str(CurrentCart.Length) + ' itens in cart, total value R$ ' + str(CurrentCart.calcPrice()))
-        print('1 - Add new book')
+        print('1 - Add new book to collection')
         print('2 - Browse available books')
         print('3 - Cart view')
         print('4 - Buy cart itens')
@@ -180,7 +186,7 @@ if __name__ ==  '__main__':
             print('###################### View your cart ######################')
             browseBooks(CurrentCart.ItensList, alterBook)
             print('###################### Total price: ' + str(CurrentCart.calcPrice()) + ' ######################')
-        elif Option == 'r' or Option == '4':
+        elif Option == 'd' or Option == '4':
             coupons()
             if cartCheckout(CurrentCart):
                 CurrentCart = cart()
