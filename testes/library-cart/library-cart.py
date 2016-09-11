@@ -1,3 +1,4 @@
+# -*- coding: <UTF-8> -*-
 import Book
 from readConversor import readme_conversor
 from Cart import cart

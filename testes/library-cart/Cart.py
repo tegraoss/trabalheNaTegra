@@ -1,3 +1,4 @@
+# -*- coding: <UTF-8> -*-
 class cart:
     ItensList = []
     Length = 0

@@ -1,3 +1,4 @@
+# -*- coding: <UTF-8> -*-
 from Book import *
 def readme_conversor():
     # This code has a very specific proporse. I will comment to clarify

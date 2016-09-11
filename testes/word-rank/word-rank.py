@@ -1,3 +1,4 @@
+# -*- coding: <UTF-8> -*-
 # Open file in read mode
 try:
     TxtFile = open("texto.txt", "r")
