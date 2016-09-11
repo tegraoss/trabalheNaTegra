@@ -1,7 +1,15 @@
 # -*- coding: <UTF-8> -*-
-def cashMachine():
+def cashMachine(WithdrawValue):
     # Set notes values
     notes = [100.0 , 50.0 , 20.0 , 10.0]
+    Withdraw = []
+    for NoteValue in notes:
+        for NumberNotes in range(int(WithdrawValue // NoteValue)):
+            Withdraw.append(NoteValue)
+            WithdrawValue = WithdrawValue % NoteValue
+    return Withdraw
+
+if __name__ ==  '__main__':
     # Scan In
     try:
         WithdrawValue = float(input())
@@ -20,12 +28,5 @@ def cashMachine():
     if not (WithdrawValue % 10 == 0):
         print("*Erro de notas indisponíveis*")
         exit()
-    Withdraw = []
-    for NoteValue in notes:
-        for NumberNotes in range(int(WithdrawValue // NoteValue)):
-            Withdraw.append(NoteValue)
-            WithdrawValue = WithdrawValue % NoteValue
-    return Withdraw
 
-if __name__ ==  '__main__':
-    print(cashMachine())
+    print(cashMachine(WithdrawValue))
