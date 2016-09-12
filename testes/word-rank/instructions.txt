@@ -1,0 +1,5 @@
+Resolvi o word-rank em python 3.5
+Então para rodá-lo, pelo terminal vá até a pasta do arquivo "word-rank.py"
+Se estiver em uma distribuição ubuntu/debian o padrão é seguinte comando
+$ python3 word-rank.py
+Em outras distribuições talvez seja necessário usar outro nome para chamar o interpretador de python 3+
