@@ -30,4 +30,4 @@ Os requisitos básicos são os seguintes:
 
 Restriçoes
 * O sistema só pode gerar um dupla por execução.
-* 
+* O mesmo participante não pode fazer pair com ele mesmo(claro)
