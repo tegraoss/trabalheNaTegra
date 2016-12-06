@@ -15,12 +15,14 @@ Os requisitos básicos são os seguintes:
 ###Chances de pair
 ###### Junior
 * Senior 8o%
-* Pleno 15&
+* Pleno 15%
 * Junior 5%
+
 ###### Pleno
 * Senior 40%
 * Pleno 20&
 * Junior 40%
+
 ###### Senior
 * Senior 5%
 * Pleno 15&
