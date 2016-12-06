@@ -3,9 +3,9 @@ Tegra Pair
 
 O Problema
 ----------
-Desenvolva uma sistema para sorteio de desenvolvedores para realizar pair programmaing.
+Desenvolva uma sistema para sorteio de desenvolvedores para realizar pair programming.
 
-###### Para ver mais sobre pair programmaing acesse https://www.youtube.com/watch?v=vgkahOzFH2Q&t=23s
+###### Para ver mais sobre pair programming acesse https://www.youtube.com/watch?v=vgkahOzFH2Q&t=23s
 
 Os requisitos básicos são os seguintes:
 
