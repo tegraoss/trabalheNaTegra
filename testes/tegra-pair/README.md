@@ -11,9 +11,10 @@ Os requisitos básicos são os seguintes:
 
 * Cadastrar membros com nome e nivel de experiência (junior, pleno, sênior)
 * Realizar o sorteio de dois desenvolvedores, onde a probabilidade das duplas deve estar relacionado com o nível de experiência. Exemplo
+
+###Chances de pair
 ###### Junior
-```
-Senior 8o%
-Pleno 15&
-Juniot 5%
-```
+* Senior 8o%
+* Pleno 15&
+* Juniot 5%
+
