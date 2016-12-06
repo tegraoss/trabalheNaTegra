@@ -20,12 +20,12 @@ Os requisitos básicos são os seguintes:
 
 ###### Pleno
 * Senior 40%
-* Pleno 20&
+* Pleno 20%
 * Junior 40%
 
 ###### Senior
 * Senior 5%
-* Pleno 15&
+* Pleno 15%
 * Junior 80%
 
 Restriçoes
