@@ -1,0 +1,21 @@
+Resolvi o library-cart em python 3.5
+Então para rodá-lo, pelo terminal vá até a pasta do arquivo "library-cart.py"
+Se estiver em uma distribuição ubuntu/debian o padrão é seguinte comando
+$ python3 library-cart.py
+Em outras distribuições talvez seja necessário usar outro nome para chamar o interpretador de python 3+
+
+Os testes devem ser rodados da mesma forma, logo:
+$ python3 test.py
+
+Quando o programa rodar será exibido valores do carrinho e o menu:
+1 - Add new book to collection
+2 - Browse available books
+3 - Cart view
+4 - Buy cart itens
+E - Exit
+
+1- Adicionar um novo livro a coleção, será necessario a entrada do nome do livro, do autor, o preço e a quantidade disponível.
+2- Navegar pelos disponíveis livros na coleção, aqui é possivel adicionar um livro ao carrinho.
+3- Ver o carrinho, navegar e alterar/remover os itens.
+4- Finalizar o pedido, aqui é possível usar um cupom.
+E- Sair
