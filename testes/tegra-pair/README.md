@@ -9,7 +9,7 @@ Desenvolva uma sistema para sorteio de desenvolvedores para realizar pair progra
 
 Os requisitos básicos são os seguintes:
 
-* Cadastrar membros com nome e nivel de experiência (junior, pleno, sênior)
+* Cadastrar membros com nome e nível de experiência (junior, pleno, sênior)
 * Realizar o sorteio de dois desenvolvedores, onde a probabilidade das duplas deve estar relacionado com o nível de experiência. Exemplo
 
 ###Chances de pair
