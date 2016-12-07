@@ -29,7 +29,7 @@ Os requisitos são:
 
 
 ###### Pares para Driver Estagiário
-* Senior 4o%
+* Senior 40%
 * Pleno 40%
 * Junior 20%
 
