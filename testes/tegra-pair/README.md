@@ -22,10 +22,10 @@ Os requisitos são:
 ###### Sorteio do Driver
 | Nível de Experiência | Probabilidade de Sorteio |
 |------------------------|------------------------|
-|Sênior|Aleatório|
-|Pleno|Aleatório|
-|Junior|Aleatório|
-|Estagiário|Aleatório|
+|Sênior|10%|
+|Pleno|10%|
+|Junior|40%|
+|Estagiário|40%|
 
 
 ###### Pares para Driver Estagiário
@@ -52,7 +52,7 @@ Os requisitos são:
 * Estagiário 20%
 
 #### Restriçoes
-* A solução só pode gerar um dupla por execução  
+* A solução deve gerar uma dupla por vez  
 
 * A solução não deve permitir que estagiários realizem pair programming com estagiários  
 
@@ -62,7 +62,7 @@ Os requisitos são:
 #### Observações:
 * Não há restrições para o desenvolvimento de sua solução: use quaisquer linguagens, boas práticas e tecnologias de sua preferência  
 
-* Sinta-se a vontade para acrescentar melhorias criativamente, a fim de proporcionar a melhor experiência a quem for usar o aplicação  
+* Sinta-se a vontade para acrescentar melhorias criativamente, a fim de proporcionar a melhor experiência a quem for usar a aplicação  
 
 * Faça o melhor possível no tempo designado. Caso não consiga terminar, entregue mesmo assim! :)  
 
