@@ -1,0 +1,44 @@
+<html ng-app="wordRankApp">
+
+<head>
+  <title>Word Rank</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/custom.css" />
+
+
+</head>
+
+<body ng-controller="mainController">
+
+  <div class="container">
+
+    <h1>Word Rank</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Word</th>
+          <th>Qty</th>
+        </tr>
+      </thead>
+      <tr ng-repeat="word in words">
+        <td>{{word.word}}</td>
+        <td>{{word.qty}}</td>
+      </tr>
+    </table>
+
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js"></script>
+  <script src="app/module.js"></script>
+  <script src="app/controllers/main.js"></script>
+
+</body>
+
+</html>
