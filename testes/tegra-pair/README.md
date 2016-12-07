@@ -17,11 +17,16 @@ Os requisitos são:
 
 ### Regras do Sorteio
 
+
+
 ###### Sorteio do Driver
-* Senior aleatório
-* Pleno aleatório
-* Junior aleatório
-* Estagiário aleatório
+| Nível de Experiência | Probabilidade de Sorteio |
+|------------------------|------------------------|
+|Sênior|Aleatório|
+|Pleno|Aleatório|
+|Junior|Aleatório|
+|Estagiário|Aleatório|
+
 
 ###### Pares para Driver Estagiário
 * Senior 4o%
