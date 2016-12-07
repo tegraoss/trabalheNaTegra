@@ -1,51 +1,46 @@
 Tegra Pair
 =========
 
-O Problema
-----------
-TODO
-
-
 O Desafio
 ----------
 Crie uma solução para sorteio de desenvolvedores para realizar pair programming.
 
-###### Para ver mais sobre pair programming, acesse: https://www.youtube.com/watch?v=vgkahOzFH2Q&t=23s
+###### Para entender sobre pair programming, acesse: https://www.youtube.com/watch?v=vgkahOzFH2Q&t=23s
 
 Os requisitos são:
 
 * Cadastrar desenvolvedores com nome e nível de experiência (estagiário, junior, pleno, sênior)
 * Realizar o sorteio de dois desenvolvedores
-* O primeiro desenvolvedor sorteado será o *piloto*
-* O segundo desenvolvedor sorteado será o *copiloto*
-* O nível do desenvolvedor *copiloto* dependerá do nível do desenvolvedor *piloto* de acordo com as regras de sorteio
+* O primeiro desenvolvedor sorteado será o *driver*
+* O segundo desenvolvedor sorteado será o *navigator*
+* O nível do desenvolvedor *navigator* dependerá do nível do desenvolvedor *driver*, de acordo com as regras de sorteio
 
 ### Regras do Sorteio
 
-###### Sorteio do Piloto
+###### Sorteio do Driver
 * Senior aleatório
 * Pleno aleatório
 * Junior aleatório
 * Estagiário aleatório
 
-###### Pares para Piloto Estagiário
+###### Pares para Driver Estagiário
 * Senior 4o%
 * Pleno 40%
 * Junior 20%
 
-###### Pares para Piloto Junior
+###### Pares para Driver Junior
 * Senior 75%
 * Pleno 15%
 * Junior 5%
 * Estagiário 5%
 
-###### Pares para Piloto Pleno
+###### Pares para Driver Pleno
 * Senior 20%
 * Pleno 10%
 * Junior 30%
 * Estagiário 40%
 
-###### Pares para Piloto Senior
+###### Pares para Driver Senior
 * Senior 5%
 * Pleno 15%
 * Junior 60%
@@ -62,10 +57,12 @@ Os requisitos são:
 #### Observações:
 * Não há restrições para o desenvolvimento de sua solução: use quaisquer linguagens, boas práticas e tecnologias de sua preferência  
 
-* Sinta-se a vontade para acrescentar melhorias com sua criatividade, a fim de proporcionar a melhor experiência a quem for usar o aplicação  
+* Sinta-se a vontade para acrescentar melhorias criativamente, a fim de proporcionar a melhor experiência a quem for usar o aplicação  
 
 * Faça o melhor possível no tempo designado. Caso não consiga terminar, entregue mesmo assim! :)  
 
 * Não é obrigatório o uso de banco de dados  
 
+
+#### Importante:
 * Inclua instruções de como executar seu código  
