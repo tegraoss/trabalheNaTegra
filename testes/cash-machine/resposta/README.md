@@ -4,7 +4,7 @@ Node v4
 
 #Como executar
 
-node cashmachine.js <Valor de entrada>
+node cashmachine.js valor_de_entrada
 
 Exemplo:
 
