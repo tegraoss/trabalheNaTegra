@@ -34,11 +34,11 @@ function entrega() {
 
 //Função principal
 function main() {
-  if (ent < 0 || isNaN(ent)) {
-    console.log("Erro de valor inválido");
-  }
-  else if(ent == null) {
+  if(ent == null) {
     console.log("Erro de valor nulo");
+  }
+  else if (ent < 0 || isNaN(ent)) {
+    console.log("Erro de valor inválido");
   }
   else {
     while(ent > 0) {
