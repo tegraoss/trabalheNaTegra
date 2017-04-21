@@ -4,7 +4,7 @@ var saque = [];
 
 //Função que verifica se o valor ja está abaixo do valor das notas disponiveis
 function verify() {
-  if (ent >= 100 || ent >= 50 || ent >= 20 || ent >= 10) {
+  if (ent >= 10) {
     return false;
   }
   return true;
@@ -12,23 +12,21 @@ function verify() {
 
 //Função que adiciona as notas ao array saque
 function entrega() {
-  switch (true) {
-    case ent >= 100:
-      saque.push("100.00");
-      ent -= 100;
-      break;
-    case ent >= 50:
-      saque.push("50.00");
-      ent -= 50;
-      break;
-    case ent >= 20:
-      saque.push("20.00");
-      ent -= 20;
-      break;
-    case ent >= 10:
-      saque.push("10.00");
-      ent -= 10;
-      break;
+  if(ent >= 100) {
+    saque.push("100.00");
+    ent -= 100;
+  }
+  else if(ent >= 50) {
+    saque.push("50.00");
+    ent -= 50;
+  }
+  else if(ent >= 20) {
+    saque.push("20.00");
+    ent -= 20;
+  }
+  else if(ent >= 10) {
+    saque.push("10.00");
+    ent -= 10;
   }
 }
 
@@ -42,7 +40,7 @@ function main() {
   }
   else {
     while(ent > 0) {
-      if (verify(ent) && ent > 0) {
+      if (verify() && ent > 0) {
         break;
       }
       else {
