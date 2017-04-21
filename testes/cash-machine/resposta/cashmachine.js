@@ -45,7 +45,7 @@ function main() {
       }
       else {
         if(ent > 0) {
-          entrega(ent);
+          entrega();
         }
         else {
           break;
