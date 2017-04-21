@@ -3,7 +3,7 @@ var buf = fs.readFileSync(process.argv[2]);
 var result = buf.toString();
 var rank = [];
 
-//Função que encontra o index do array do elemento 
+//Função que encontra o index do array do elemento
 function findArray(element) {
   var indexFound = rank.findIndex(function(minAr) {
     return minAr[0] === element;
@@ -14,17 +14,19 @@ function findArray(element) {
 
 //Função que ordena o array por ordem alfabetica e por numero de ocorrencias da palavra
 function sortArray(a, b) {
-  if(a[0] < b[0] && a.length >= b.length) {
+  if(a.length > b.length) {
     return -1;
   }
-  if(a[0] < b[0] && a.length < b.length) {
+  if(a.length < b.length) {
     return 1;
   }
-  if(a[0] > b[0] && a.length > b.length) {
-    return -1;
-  }
-  if(a[0] > b[0] && a.length <= b.length) {
-    return 1;
+  if(a.length == b.length) {
+    if(a[0] < b[0]) {
+      return -1;
+    }
+    else {
+      return 1;
+    }
   }
 }
 
