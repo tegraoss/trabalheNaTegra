@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Livros</h1>
+  <table class="table">
+    <tr>
+      <th>Titulo</th>
+      <th>Autor</th>
+      <th>Preço</th>
+      <th>Quantidade em estoque</th>
+      <th>Comprar</th>
+    </tr>
+    <tr ng-repeat="b in books">
+      <td>{{ b.title }}</td>
+      <td>{{ b.author }}</td>
+      <td>R$ {{ b.price }}</td>
+      <td>{{ b.stock }}</td>
+      <td><button class="btn btn-primary" ng-click="addToCart(b)">Comprar</button></td>
+    </tr>
+  </table>
+</div>

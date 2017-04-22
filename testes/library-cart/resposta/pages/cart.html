@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Carrinho</h1>
+  <table class="table">
+    <tr>
+      <th>Titulo</th>
+      <th>Preço</th>
+      <th>Quantidade</th>
+      <th>Sub-Total</th>
+      <th>Remover</th>
+    </tr>
+    <tr ng-repeat="c in cart">
+      <td>{{ c.item.title }}</td>
+      <td>R$ {{ c.item.price }}</td>
+      <td>{{ c.quant }}</td>
+      <td>R$ {{calcSubtotal(c)}}</td>
+      <td><button type="button" class="btn btn-danger" ng-click="removeFromCart(c)">Remover</button></td>
+    </tr>
+    <tr>
+      <th colspan="5">
+        <form>
+          Cupom: <input type="text" ng-model="coupon" />
+          <button type="button" class="btn btn-success" ng-click="calcDesconto()">Resgatar</button>
+        </form>
+      </th>
+    </tr>
+    <tr>
+      <th colspan="5">
+        Total: R$ <span ng-bind="total"></span>
+      </th>
+    </tr>
+  </table>
+
+</div>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Library Cart</title>
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="./bower_components/angular/angular.min.js" charset="utf-8"></script>
+    <script src="./bower_components/angular-route/angular-route.min.js" charset="utf-8"></script>
+    <script src="./js/main.js"></script>
+  </head>
+  <body>
+    <div ng-app="library-cart">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">Library-Cart</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="/">Livros</a></li>
+            <li><a href="/cart">Carrinho</a></li>
+          </ul>
+        </div>
+      </nav>
+      <ng-view></ng-view>
+    </div>
+  </body>
+</html>
