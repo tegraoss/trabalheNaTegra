@@ -23,13 +23,13 @@ function calcTotal() {
     total += (cart[i].item.price * cart[i].quant);
     total = Math.round(total * 100) / 100;
   }
-  $scope.$apply();
-  $scope.$apply;
+  $scope.total = total;
 }
 
 app.controller("products-controller", function($scope) {
   $scope.books = books;
   $scope.addToCart = addToCart;
+
 
   function addToCart(book) {
     for(var i = 0; i < books.length; i++) {
@@ -62,6 +62,10 @@ app.controller("cart-controller", function($scope) {
   $scope.removeFromCart = removeFromCart;
   $scope.calcDesconto = calcDesconto;
   $scope.total = total;
+
+  // $scope.$watch('total', function() {
+  //   $scope.total = total;
+  // });
 
   function calcDesconto() {
     if($scope.coupon == "TrabalheNaTegra") {
