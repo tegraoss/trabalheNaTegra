@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Cadastrar desenvolvedor</h1><br /><br>
+  <form>
+    Nome: <input type="text" ng-model="nome"><br><br>
+    Nível: <select ng-model="nivel" ng-options="x for x in niveis"></select><br>
+    <br><button type="button" class="btn btn-primary" ng-click="cadastrar()">Cadastrar</button>
+  </form>
+</div>
