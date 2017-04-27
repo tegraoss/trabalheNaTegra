@@ -17,18 +17,18 @@ var coupon = "";
 var total = 0;
 var app = angular.module("library-cart", ["ngRoute"]);
 
-function calcTotal() {
-  total = 0;
-  for(var i = 0; i < cart.length; i++) {
-    total += (cart[i].item.price * cart[i].quant);
-    total = Math.round(total * 100) / 100;
-  }
-  $scope.total = total;
-}
-
 app.controller("products-controller", function($scope) {
   $scope.books = books;
   $scope.addToCart = addToCart;
+
+  function calcTotal() {
+    total = 0;
+    for(var i = 0; i < cart.length; i++) {
+      total += (cart[i].item.price * cart[i].quant);
+      total = Math.round(total * 100) / 100;
+    }
+    $scope.total = total;
+  }
 
 
   function addToCart(book) {
@@ -63,9 +63,18 @@ app.controller("cart-controller", function($scope) {
   $scope.calcDesconto = calcDesconto;
   $scope.total = total;
 
-  // $scope.$watch('total', function() {
-  //   $scope.total = total;
-  // });
+  function calcTotal() {
+    total = 0;
+    for(var i = 0; i < cart.length; i++) {
+      total += (cart[i].item.price * cart[i].quant);
+      total = Math.round(total * 100) / 100;
+    }
+    $scope.total = total;
+
+    $timeout(function() {
+      $scope.total = total;
+    }, 100);
+  }
 
   function calcDesconto() {
     if($scope.coupon == "TrabalheNaTegra") {
