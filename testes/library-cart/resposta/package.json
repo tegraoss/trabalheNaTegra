@@ -1,0 +1,19 @@
+{
+  "name": "library-cart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "medson10",
+  "license": "ISC",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "browser-sync": "^2.18.8",
+    "gulp-watch": "^4.3.11"
+  }
+}
