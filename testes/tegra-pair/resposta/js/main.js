@@ -85,7 +85,9 @@ app.controller('sorteio-controller', function($scope, $timeout) {
       }
     }
     var devsFiltered = devs.filter(function(a) {
-      return a.nivel == category;
+      if(a != dev) {
+        return a.nivel == category;
+      }
     });
     var num = Math.floor(Math.random() * devsFiltered.length);
 
@@ -102,7 +104,6 @@ app.controller('sorteio-controller', function($scope, $timeout) {
     navigato = findDev(driver);
     dupla.driver = driver;
     dupla.navigato = navigato;
-    console.log(dupla);
 
     if(dupla.driver == dupla_ant.driver && dupla.navigato == dupla_ant.navigato) {
       alert('Erro: dupla sorteada igual a dupla anterior');
